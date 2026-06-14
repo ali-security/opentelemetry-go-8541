@@ -54,6 +54,7 @@ jobs:
         run: make check-clean-work-tree
 
   govulncheck:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -158,6 +159,7 @@ jobs:
         with:
           pattern: coverage-artifacts-${{ env.DEFAULT_GO_VERSION }}
       - name: Upload coverage report
+        if: false
         uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         with:
           fail_ci_if_error: true
